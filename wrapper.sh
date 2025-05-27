@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Environment Variables must be passed into the docker run command
 
 [[ -z "${START_DATE}" ]] && startDate='None' || startDate="${START_DATE}"
