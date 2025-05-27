@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Environment Variables must be passed into the docker run command
 
 #need to update this 

@@ -6,4 +6,6 @@ RUN pip install -r requirements.txt
 COPY generate_cloud_optimized_store.ipynb .
 COPY wrapper.sh .
 RUN chmod 755 wrapper.sh
-ENTRYPOINT = ["wrapper.sh"]
+
+RUN apt-get update; apt-get install -y jq awscli
+ENTRYPOINT ["/opt/cloud-optimized/wrapper.sh"]
