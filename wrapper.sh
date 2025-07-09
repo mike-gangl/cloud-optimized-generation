@@ -18,4 +18,4 @@ EOF
 
 papermill generate_cloud_optimized_store_https.ipynb output.ipynb --log-output  -p collection $COLLECTION -p loadable_coord_vars $LOADABLE_VARS -p start_date $startDate -p end_date $endDate -p bucket $OUTPUT_BUCKET
 
-aws s3 cp output.ipynb s3://$OUTPUT_BUCKET/virtualcollection/$COLLECTION/output.ipynb
+aws s3 sync . s3://$OUTPUT_BUCKET/virtualcollection/$COLLECTION/ --exclude "*" --include "*virtual.json" --include "output.ipynb" --exclude ".ipynb_checkpoints"
